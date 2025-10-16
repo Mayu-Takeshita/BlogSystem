@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{% if article %}記事編集{% else %}新規投稿{% endif %}</h2>
+<form method="POST">
+  <p>タイトル: <input type="text" name="title" value="{{ article.title if article else '' }}"></p>
+  <p>本文:<br><textarea name="body" rows="6" cols="60">{{ article.body if article else '' }}</textarea></p>
+  <button type="submit">{% if article %}更新{% else %}投稿{% endif %}</button>
+</form>
+{% endblock %}

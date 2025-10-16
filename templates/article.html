@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ article.title }}</h2>
+<p>{{ article.body }}</p>
+<small>投稿者：{{ article.author.username }} ｜ 投稿日：{{ article.date_posted.strftime('%Y/%m/%d %H:%M') }}</small>
+
+{% if current_user.is_authenticated and current_user.id == article.author.id %}
+  <p><a href="/edit/{{ article.id }}">この記事を編集する</a></p>
+{% endif %}
+
+<hr>
+<h3>コメント一覧</h3>
+{% for c in comments %}
+  <div class="comment">
+    <p>{{ c.body }}</p>
+    <small>投稿者：{{ c.commenter.username }} ｜ {{ c.date_posted.strftime('%Y/%m/%d %H:%M') }}</small>
+  </div>
+{% else %}
+  <p>まだコメントはありません。</p>
+{% endfor %}
+
+{% if current_user.is_authenticated %}
+<form method="POST">
+  <p><textarea name="body" rows="3" cols="50" placeholder="コメントを書く..."></textarea></p>
+  <button type="submit">コメント投稿</button>
+</form>
+{% else %}
+<p>コメントするにはログインしてください。</p>
+{% endif %}
+{% endblock %}

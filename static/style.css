@@ -1,0 +1,68 @@
+body {
+  font-family: "Hiragino Sans", sans-serif;
+  margin: 20px;
+  background: #f6f8fa;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0078d7;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  margin-top: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.comment {
+  background: #eef4ff;
+  border-left: 4px solid #0078d7;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.flash {
+  list-style: none;
+  padding: 10px;
+  background: #dff0d8;
+  color: #3c763d;
+  border-radius: 8px;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+  color: #666;
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 15px;
+  margin-bottom: 20px; /* ←これを少し増やす */
+}

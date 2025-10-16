@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>コメント一覧</h2>
+
+{% for c in comments %}
+<div class="card">
+  <p><strong>コメント内容：</strong>{{ c.body }}</p>
+  <p><strong>対象記事：</strong>
+    <a href="/article/{{ c.article_id }}">{{ c.article.title }}</a>
+  </p>
+  <small>
+    投稿者：{{ c.commenter.username }} ｜ 投稿日：{{ c.date_posted.strftime('%Y/%m/%d %H:%M') }}
+  </small>
+</div>
+{% else %}
+<p>まだコメントはありません。</p>
+{% endfor %}
+{% endblock %}
